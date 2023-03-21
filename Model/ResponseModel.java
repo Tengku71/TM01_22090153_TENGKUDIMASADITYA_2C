@@ -33,10 +33,5 @@ public class ResponseModel {
     public ResponseModel(){
 
     }
-    ResponseModel(String msg, String status, String comment){
-        this.msg = msg;
-        this.status = status;
-        this.comment = comment;
-    }
 
 }

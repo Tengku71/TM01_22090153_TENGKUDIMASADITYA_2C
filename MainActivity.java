@@ -20,6 +20,8 @@ public class MainActivity extends JFrame{
     private JLabel labelStatus;
     private JLabel labelComment;
     private JPanel panelMain;
+    private JButton buttonCLose;
+    private JButton buttonMin;
 
     public MainActivity(){
         buttonSubmit.addActionListener(new ActionListener() {
@@ -50,7 +52,8 @@ public class MainActivity extends JFrame{
 
             }
         });
-        buttonClose.addActionListener(new ActionListener() {
+
+        buttonCLose.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textFieldMsg.setText("");
@@ -58,13 +61,19 @@ public class MainActivity extends JFrame{
                 textFieldComment.setText("");
             }
         });
+        buttonMin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(1);
+            }
+        });
     }
     public static void main(String[] args) {
         JFrame frame = new JFrame("MainActivity");
         frame.setContentPane(new MainActivity().panelMain);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        frame.setResizable(false);
-       // frame.setUndecorated(true);
+        frame.setResizable(true);
+        frame.setUndecorated(true);
         frame.pack();
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
