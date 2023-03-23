@@ -42,10 +42,12 @@ public class MainActivity extends JFrame{
                         resModel.setComment(myJSONObject.getString("status"));
                         resModel.setStatus(myJSONObject.getString("comment"));
                         responseModel.add(resModel);}
+                    JOptionPane.showMessageDialog(null,"Data Sudah Didapat");
                     for (int index = 0; index < responseModel.size(); index++) {
                         textFieldMsg.setText(responseModel.get(index).getMsg());
                         textFieldStatus.setText(responseModel.get(index).getStatus());
                         textFieldComment.setText(responseModel.get(index).getComment());
+
                     }}catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -59,6 +61,7 @@ public class MainActivity extends JFrame{
                 textFieldMsg.setText("");
                 textFieldStatus.setText("");
                 textFieldComment.setText("");
+                JOptionPane.showMessageDialog(null,"Data sudah dibersihkan");
             }
         });
         buttonMin.addActionListener(new ActionListener() {
